@@ -46,7 +46,7 @@ NSString * const kOmnibarSearchProviders = @"SafariOmnibar_SearchProviders";
         if ((!url || (![url.host isEqualToString:@"about"] && ![NSHost hostWithName:url.host].address))
             && ![NSHost hostWithName:location].address)
         {
-            // When location can't be parsed as URL or URL's host part can't be resolved, perform a search using the default search provider, and the string itself isn't a hostname
+            // When location can't be parsed as URL or URL's host part can't be resolved, and the string itself isn't a hostname, perform a search using the default search provider
             searchURLTemplate = [[plugin defaultSearchProvider] objectForKey:@"SearchURLTemplate"];
         }
     }
